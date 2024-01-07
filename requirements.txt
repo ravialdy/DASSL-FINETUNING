@@ -1,0 +1,4 @@
+huggingface-hub==0.4.0
+transformers==4.18.0
+wandb==0.13.3
+matplotlib
