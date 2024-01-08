@@ -201,8 +201,6 @@ _C.TRAIN.PRINT_FREQ = 10
 # Use 'train_x', 'train_u' or 'smaller_one' to count
 # the number of iterations in an epoch (for DA and SSL)
 _C.TRAIN.COUNT_ITER = "train_x"
-_C.TRAIN.ADVERSARIAL_ATTACK = '' # Whether to enable adversarial training or not
-_C.TRAIN.DEFENSE = False # Whether to enable robustness defense or not
 
 ###########################
 # Test
@@ -211,15 +209,9 @@ _C.TEST = CN()
 _C.TEST.EVALUATOR = "Classification"
 _C.TEST.PER_CLASS_RESULT = False
 _C.TEST.SAMPLE = ''
-_C.TEST.ADVERSARIAL_ATTACK = '' # Whether to enable adversarial testing or not
 _C.TEST.EARLY_STOPPING = True
-_C.TEST.ADVERSARIAL_FOLDER = "" # Whether to test directly on adversarial directory or not
-_C.TEST.SAVE_ADVIMG = "" # Save the adversarial images or not
-_C.TEST.REVERSE = "" # Reverse the adversarial evaluation or not
 _C.TEST.START_CLASS = 0 # Whether to skip some classes or not 
 _C.TEST.INFERENCE = False
-_C.TEST.INFER_FOLDER = False
-_C.TEST.NO_BLACKVIP = False
 # Compute confusion matrix, which will be saved
 # to $OUTPUT_DIR/cmat.pt
 _C.TEST.COMPUTE_CMAT = False
@@ -321,15 +313,3 @@ _C.TRAINER.FIXMATCH = CN()
 _C.TRAINER.FIXMATCH.WEIGHT_U = 1.0  # weight on the unlabeled loss
 _C.TRAINER.FIXMATCH.CONF_THRE = 0.95  # confidence threshold
 _C.TRAINER.FIXMATCH.STRONG_TRANSFORMS = ()
-
-###########################
-# Location of Attack
-###########################
-_C.ATTACK = CN()
-_C.ATTACK.PROMPT = False
-
-###########################
-# Defense specifics
-###########################
-_C.DEFENSE = CN()
-_C.DEFENSE.NAME = ""

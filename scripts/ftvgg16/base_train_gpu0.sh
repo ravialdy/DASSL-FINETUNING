@@ -9,6 +9,7 @@ TRAINER=FTVGG16
 CFG=vgg16
 SHOTS=16
 WEP=100
+sample="100"
 
 DATASET=$1
 EP=$2
@@ -37,6 +38,7 @@ do
     OPTIM.LR ${LR} \
     TRAIN.CHECKPOINT_FREQ 100 \
     TEST.FINAL_MODEL best_val \
+    TEST.SAMPLE $sample \
     DATASET.SUBSAMPLE_CLASSES all
     # fi
 done
